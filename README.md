@@ -9,37 +9,36 @@ A hands-on sandbox for learning and thoughtful customization of Google’s **Gem
 
 ## Contents
 
-gemma3_4b_opuslabs/
-│
-├── README.md                       ← you are here
-├── setup_model.py                  ← automated model download script
-├── download_model.sh               ← shell script for model download
-├── requirements.txt                ← Python dependencies
-├── Gemma3Report.pdf                ← reference paper for Gemma 3
-│
-├── configs/
-│   ├── config.json
-│   ├── generation_config.json
-│   ├── preprocessor_config.json
-│   └── processor_config.json
-│
-├── tokenizer/
-│   ├── tokenizer.json
-│   ├── tokenizer_config.json
-│   ├── tokenizer.model
-│   ├── special_tokens_map.json
-│   └── added_tokens.json
-│
-├── chat/
-│   └── chat_template.json          ← control surface for formatting messages
-│
-├── weights/                        ← download model weights here via setup script
-│   └── [empty - run setup script to download]
-│
-└── opus/
-├── opuslabs_system_prompt.md   ← house style and safety rules for OpusLABS
-├── opus_emotional_token_set_v1.json  ← tiny haptics-aware lexicon
-└── opus_micro_dataset_v1.json  ← small eval seed set for regression checks
+- **README.md** ← you are here
+- **setup_model.py** - automated model download script
+- **download_model.sh** - shell script for model download
+- **requirements.txt** - Python dependencies
+- **LICENSE** - Apache 2.0 + Gemma terms
+- **Gemma3Report.pdf** - reference paper for Gemma 3
+
+### configs/ - model configuration files
+- config.json
+- generation_config.json
+- preprocessor_config.json
+- processor_config.json
+
+### tokenizer/ - tokenizer and vocabulary files
+- **tokenizer.json** - main tokenizer (32MB - LFS)
+- tokenizer_config.json
+- **tokenizer.model** - sentencepiece model (4.5MB - LFS)
+- special_tokens_map.json
+- added_tokens.json
+
+### chat/ - chat template system
+- **chat_template.json** - message formatting control surface
+
+### weights/ - model weights (download via setup script)
+- **[empty - run setup script to download 8GB of model files]**
+
+### opus/ - OpusLABS customizations
+- **opuslabs_system_prompt.md** - house style and safety rules
+- **opus_emotional_token_set_v1.json** - tiny haptics-aware lexicon (49 tokens)
+- **opus_micro_dataset_v1.json** - small eval seed set for regression checks
 
 ---
 
@@ -120,7 +119,7 @@ File: `opus/opus_micro_dataset_v1.json`
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/gemma3_4b_opuslabs.git
+   git clone https://github.com/saivishnu2299/gemma3_4b_opuslabs
    cd gemma3_4b_opuslabs
    ```
 
