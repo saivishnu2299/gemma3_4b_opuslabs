@@ -1,0 +1,159 @@
+{
+  "version": "opus_tokens_bundle_v1",
+  "added_tokens": {
+    "tokens": [
+      "[begin_haptics]",
+      "[end_haptics]",
+      "[calm]",
+      "[soothe]",
+      "[focus]",
+      "[steady]",
+      "[ground]",
+      "[uplift]",
+      "[spark]",
+      "[alert_mild]",
+      "[alert_high]",
+      "[rest_state]",
+      "[i1]",
+      "[i2]",
+      "[i3]",
+      "[i4]",
+      "[i5]",
+      "[pat_wave]",
+      "[pat_pulse]",
+      "[pat_ripple]",
+      "[pat_fade]",
+      "[pat_bloom]",
+      "[pat_breath]",
+      "[pat_tap]",
+      "[pat_roll]",
+      "[t250ms]",
+      "[t500ms]",
+      "[t1s]",
+      "[t2s]",
+      "[t5s]",
+      "[rest_250ms]",
+      "[rest_500ms]",
+      "[rest_1s]",
+      "[m1]",
+      "[m2]",
+      "[m3]",
+      "[m4]",
+      "[m_all]",
+      "[m_left]",
+      "[m_right]",
+      "[m_upper]",
+      "[m_lower]",
+      "[seq_repeat_2]",
+      "[seq_repeat_3]"
+    ]
+  },
+  "semantics": {
+    "version": "opus_tokens_semantics_v1",
+    "emotions": {
+      "[calm]": "gentle relief, low arousal",
+      "[soothe]": "comfort after stress",
+      "[focus]": "alert but not tense",
+      "[steady]": "confidence and continuity",
+      "[ground]": "present, embodied attention",
+      "[uplift]": "light positive energy",
+      "[spark]": "creative ignition",
+      "[alert_mild]": "soft attention cue",
+      "[alert_high]": "urgent attention cue",
+      "[rest_state]": "transition to rest"
+    },
+    "intensity": {
+      "[i1]": "very light",
+      "[i2]": "light",
+      "[i3]": "medium",
+      "[i4]": "strong",
+      "[i5]": "very strong"
+    },
+    "patterns": {
+      "[pat_wave]": "smooth sinusoidal wave",
+      "[pat_pulse]": "discrete short pulses",
+      "[pat_ripple]": "sequential spread across motors",
+      "[pat_fade]": "fade in and fade out",
+      "[pat_bloom]": "rising intensity then release",
+      "[pat_breath]": "slow inhale-exhale cadence",
+      "[pat_tap]": "single quick tap",
+      "[pat_roll]": "rolling activation around motors"
+    },
+    "duration": {
+      "[t250ms]": "0.25 seconds",
+      "[t500ms]": "0.50 seconds",
+      "[t1s]": "1.0 seconds",
+      "[t2s]": "2.0 seconds",
+      "[t5s]": "5.0 seconds"
+    },
+    "rests": {
+      "[rest_250ms]": "pause for 0.25 seconds",
+      "[rest_500ms]": "pause for 0.50 seconds",
+      "[rest_1s]": "pause for 1.0 seconds"
+    },
+    "motors": {
+      "[m1]": "upper left",
+      "[m2]": "upper right",
+      "[m3]": "lower left",
+      "[m4]": "lower right",
+      "[m_all]": "all motors",
+      "[m_left]": "left side aggregate",
+      "[m_right]": "right side aggregate",
+      "[m_upper]": "upper pair aggregate",
+      "[m_lower]": "lower pair aggregate"
+    },
+    "sequence": {
+      "[seq_repeat_2]": "repeat previous block 2 times",
+      "[seq_repeat_3]": "repeat previous block 3 times"
+    },
+    "usage_notes": [
+      "Use [i2] as a safe default intensity for first time patterns.",
+      "For attention cues, prefer [alert_mild] unless urgency is explicit.",
+      "Keep sequences under 5 seconds for a single recommendation, then allow repeat.",
+      "When providing both text and haptics, place haptics in a separate section.",
+      "Do not emit tokens unless OPUS_HAPTICS=on or the user explicitly asks."
+    ]
+  },
+  "macros": {
+    "version": "opus_haptic_macros_v1",
+    "macros": {
+      "[feel_calm]": [
+        "[begin_haptics]",
+        "[calm]",
+        "[i2]",
+        "[pat_breath]",
+        "[m_all]",
+        "[t2s]",
+        "[rest_500ms]",
+        "[seq_repeat_2]",
+        "[end_haptics]"
+      ],
+      "[reset_focus]": [
+        "[begin_haptics]",
+        "[focus]",
+        "[i3]",
+        "[pat_wave]",
+        "[m_upper]",
+        "[t1s]",
+        "[rest_250ms]",
+        "[pat_pulse]",
+        "[m_all]",
+        "[t500ms]",
+        "[end_haptics]"
+      ],
+      "[soft_alert]": [
+        "[begin_haptics]",
+        "[alert_mild]",
+        "[i2]",
+        "[pat_tap]",
+        "[m_right]",
+        "[t250ms]",
+        "[rest_250ms]",
+        "[pat_tap]",
+        "[m_right]",
+        "[t250ms]",
+        "[end_haptics]"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# Core dependencies for Gemma 3 4B OpusLABS Lab
+transformers>=4.40.0
+torch>=2.0.0
+huggingface_hub>=0.20.0
+
+# Optional: for running the setup script
+requests
+tqdm
+
+# Optional: for development and testing
+pytest
+black
+flake8

@@ -1,0 +1,122 @@
+# ========================================
+# CACHE AND TEMPORARY FILES
+# ========================================
+
+# Cache directories
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# HuggingFace cache
+.huggingface/
+
+# Model artifacts and temporary files
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.joblib
+*.onnx
+*.tflite
+*.h5
+*.pb
+
+# Large model files (download separately via setup script)
+weights/model-00001-of-00002.safetensors
+weights/model-00002-of-00002.safetensors
+# Other potential large model files
+weights/model*.safetensors
+
+# ========================================
+# LOGS AND RUNTIME DATA
+# ========================================
+
+# Logs
+*.log
+logs/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# ========================================
+# DEVELOPMENT ENVIRONMENT
+# ========================================
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# ========================================
+# MACHINE LEARNING SPECIFIC
+# ========================================
+
+# PyTorch Lightning
+lightning_logs/
+
+# TensorBoard
+runs/
+tb_logs/
+
+# MLflow
+mlruns/
+
+# Weights & Biases
+wandb/
+
+# Model checkpoints (not the main model files)
+checkpoints/
+*.checkpoint
+
+# Data directories (if any)
+data/
+datasets/
+raw_data/
+
+# ========================================
+# GIT AND VERSION CONTROL
+# ========================================
+
+# Git LFS (keep .gitattributes)
+.gitattributes
+
+# Git
+.git/
